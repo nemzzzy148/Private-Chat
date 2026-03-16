@@ -53,6 +53,5 @@ jlink {
     jpackage {
         installerName = "PrivateChat"
         appVersion = "1.0.0"
-        installerType = "app-image"
     }
 }
