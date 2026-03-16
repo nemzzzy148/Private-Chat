@@ -17,7 +17,7 @@ val junitVersion = "5.12.1"
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
@@ -31,7 +31,7 @@ application {
 }
 
 javafx {
-    version = "17.0.6"
+    version = "21.0.6"
     modules = listOf("javafx.controls", "javafx.fxml")
 }
 
@@ -53,5 +53,8 @@ jlink {
     jpackage {
         installerName = "PrivateChat"
         appVersion = "1.0.0"
+        if (org.gradle.internal.os.OperatingSystem.current().isMacOsX) {
+            installerOptions.addAll(listOf("--mac-package-identifier", "com.java.privatechat"))
+        }
     }
 }
