@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.java"
-version = "1.0-SNAPSHOT"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
@@ -53,6 +53,6 @@ jlink {
     jpackage {
         installerName = "PrivateChat"
         appVersion = "1.0.0"
-        installerType = if (org.gradle.internal.os.OperatingSystem.current().isWindows) "exe" else "dmg"
+        installerType = if (org.gradle.internal.os.OperatingSystem.current().isWindows) "app-image" else "dmg"
     }
 }
