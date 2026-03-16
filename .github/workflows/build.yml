@@ -6,22 +6,19 @@ jobs:
   build-windows:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup Java
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
 
       - name: Build with Gradle
-        run: ./gradlew jpackageImage
-
-      - name: Create EXE
         run: ./gradlew jpackage
 
       - name: Upload EXE
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: PrivateChat-windows
           path: build/jpackage/*.exe
@@ -29,22 +26,19 @@ jobs:
   build-mac:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup Java
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
 
       - name: Build with Gradle
-        run: ./gradlew jpackageImage
-
-      - name: Create DMG
         run: ./gradlew jpackage
 
       - name: Upload DMG
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: PrivateChat-mac
           path: build/jpackage/*.dmg
