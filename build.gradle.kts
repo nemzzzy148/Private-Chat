@@ -53,6 +53,6 @@ jlink {
     jpackage {
         installerName = "PrivateChat"
         appVersion = "1.0.0"
-        installerType = if (org.gradle.internal.os.OperatingSystem.current().isWindows) "app-image" else "dmg"
+        installerType = "app-image"
     }
 }
